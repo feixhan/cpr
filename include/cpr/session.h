@@ -2,6 +2,7 @@
 #define CPR_SESSION_H
 
 #include <cstdint>
+#include <fstream>
 #include <memory>
 
 #include "cpr/auth.h"
@@ -70,6 +71,7 @@ class Session {
     void SetOption(const VerifySsl& verify);
 
     Response Delete();
+    Response Download(std::ofstream& file);
     Response Get();
     Response Head();
     Response Options();
